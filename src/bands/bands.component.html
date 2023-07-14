@@ -1,0 +1,153 @@
+<div class="row">
+
+<h1>Recordings</h1>
+
+<!-- <div class="col-lg-12 col-md-12 col-sm-12 banddata "> -->
+
+
+    <div *ngFor="let item of banddata.data let i = index;">
+
+
+        <div class="data-container-border">
+
+
+            <div *ngIf="item.aapproved == '1'" class="">
+
+                <div class="col-lg-2 col-md-2 col-sm-12">
+
+                    <div class="img-album-thumb" *ngIf="item.alocalurlgraphicsmall">
+                        <img src="../assets/images/album/images/albumcovers/{{item.alocalurlgraphicsmall}}"
+                                height="144" width="144"/></div>
+
+                </div>
+
+                <div class="col-lg-5 col-md-5 col-sm-12">
+
+                    <h2>{{item.abandname}}</h2>
+                    <h3>{{item.albumid}}</h3>
+
+                    <div>Produced and engineered by:
+                        <span *ngIf="item.aotherproducername">{{item.aotherproducername}} and </span>
+                        Gary King
+                    </div>
+
+                    <div *ngIf="item.labelid">Label: {{item.labelid}}</div>
+
+                    <div *ngIf="item.asongtitles">Titles: {{item.asongtitles}}</div>
+
+                    <br/>
+
+                    <!-- audio -->
+                    <div *ngFor="let audio of item['audio']">
+
+                        <div *ngIf="audio.audiotitle">{{audio.audiotitle}}
+                            <!--<div *ngIf="audio.audiofile">{{audio.audiofile}}-->
+
+                            <div *ngIf="audio.audiofile">
+                                <audio controls controlsList="nodownload">
+                                    <source src="../assets/audio/{{audio.audiofile}}">
+                                </audio>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-5 col-sm-12">
+                    <p [innerHTML]="item.areleasedescription" *ngIf="item.areleasedescription">
+                        {{item.areleasedescription}}</p>
+
+                    <p [innerHTML]="item.astory" *ngIf="item.astory">
+                        {{item.astory}}</p>
+
+                    <div [innerHTML]="item.areleasedate" *ngIf="item.areleasedate">{{item.areleasedate}}></div>
+
+
+                    <div *ngIf="item.studioid">Tracking at: {{item.studioid}}
+                        <span *ngIf="item.atrackingstudiolocation">, {{item.atrackingstudiolocation}}</span>
+                    </div>
+                    <div *ngIf="item.amixingstudioname">Mixed at: {{item.amixingstudioname}}
+                        <span *ngIf="item.amixingstudiolocation">, {{item.amixingstudiolocation}}</span>
+                    </div>
+                    <div *ngIf="item.amasterstudioname">Mastered at: {{item.amasterstudioname}}
+                        <span *ngIf="item.amasterstudiolocation">, {{item.amasterstudiolocation}}</span>
+                    </div>
+
+
+                </div>
+
+
+                <div class="clear"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+  </div>
+<!-- </div> -->
+
+
+<!--
+"alocalurlgraphicsmall": "ers.gif",
+      "alocalurlgraphicmedium": "",
+      "alocalurlgraphiclarge": "",
+      "alocalurlgraphicbandphoto": "",
+      "audioApproved": "0",
+      "audio": [
+        {
+          "audiotitle": "ERS",
+          "audiofile": "ers.mp3"
+        }
+      ],
+      "areleasetitle": "Evil Roy Slade",
+      "areleasedescription": "",
+      "aformat": "Gary King",
+      "areleasedate": "1992",
+      "arecorded": "",
+      "aawards": "",
+      "anumberofsongs": "0",
+      "asongtitles": "",
+      "anumberofsongscredited": "0",
+      "aproducedbyjack": "1",
+      "aotherproducername": "",
+      "aengineeredbyjack": "1",
+      "aotherengineername": "",
+      "amasteredbyjack": "1",
+      "aothermasterengineername": "Chris Hanzek",
+      "apostproductionbyjack": "0",
+      "aotherpostproductionname": "",
+      "atrackingformat": "Tascam 1 inch 499",
+      "amixdownformat": "DAT",
+      "amixedinbox": "",
+      "amixingconsole": "Ramsa WRT820",
+      "aconsoleautomation": "",
+      "aclicktrackused": "",
+      "atrackingstudioname": "House of Leisure",
+      "atrackingstudiolocation": "Seattle, WA",
+      "aodstudioname": "House of Leisure",
+      "aodstudiolocation": "Seattle, WA",
+      "amixingstudioname": "House of Leisure",
+      "amixingstudiolocation": "Seattle, WA",
+      "amasterstudioname": "Hanzek Audio",
+      "amasterstudiolocation": "Seattle, WA",
+      "aallmusicurl": "",
+      "awikipediaurl": "",
+      "aemusicurl": "",
+      "arhapsodyurl": "",
+      "aamazonurl": "",
+      "acdbabyurl": "",
+      "astory": "",
+      "areissuedlater": "",
+      "areissueyear": "",
+      "areissueformat": "",
+      "areissuecountry": "",
+      "areissuelableid": "",
+      "anotes": "",
+      "bandid": "Evil Roy Slade",
+      "labelid": "Turtle Records",
+      "studioid": "House of Leisure",
+      "projectid": "",
+      "aother1": "",
+      "aother2": ""
+-->

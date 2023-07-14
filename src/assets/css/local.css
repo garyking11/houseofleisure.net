@@ -1,0 +1,83 @@
+html, body {    
+    width: 100%;
+    margin: 0 auto;
+    line-height: 1.1;
+    font-size: 16px;
+    color: #333;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: #384061;
+}
+
+h2 {
+    color: #7d85a3
+    
+}
+
+p {
+    color: #333;
+}
+a {
+    color: #7d85a3;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #6C9286;
+    text-decoration: none;
+}
+
+a.active {
+    color: #6C9286;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    max-width: 1170px;
+}
+#page-top {
+	background: #292f47;
+    width: 100%; 
+    margin: 0 auto;
+	text-align: center;
+}
+
+.page-link-icons {
+    margin: 10px auto;
+    text-align: center;
+    font-size: 36px;
+    text-transform: lowercase;
+}
+
+.page-link-icons img {
+    max-width: 18px;   
+}
+
+.data-container-border {
+     
+    padding: 10px;
+    border: 1px solid #d8d8d8;
+    background: #fbfbfb;
+}
+
+.data-container {
+    margin: 10px;
+    padding: 10px;
+}
+
+.banddata h2 {
+
+}
+
+.img-album-thumb {
+    margin: 20px 10px 10px 0;
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
