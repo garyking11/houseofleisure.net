@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetDataService } from "./get-data.service";
+import { GetDataService } from './get-data.service';
 
 @Component({
   selector: 'app-bands',
@@ -9,10 +9,10 @@ import { GetDataService } from "./get-data.service";
 
 export class BandsComponent implements OnInit {
 
-  constructor(private _getDataService:GetDataService,) {
+  constructor(private _getDataService: GetDataService, ) {
   }
 
-  private banddata;
+  public banddata;
 
   ngOnInit() {
     this.getContent();
@@ -23,7 +23,7 @@ export class BandsComponent implements OnInit {
     this._getDataService.getContentData().subscribe(
         data => {
           this.banddata = data;
-          console.log(this.banddata);
+          // console.log(this.banddata);
         },
         error => console.log(error)
     );

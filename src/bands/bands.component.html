@@ -1,9 +1,9 @@
-<div class="row">
+<div id="bands" class="row">
 
 <h1>Recordings</h1>
 
 <!-- <div class="col-lg-12 col-md-12 col-sm-12 banddata "> -->
-
+  <p>Here is the list of bands that have recorded at House Of Leisure as I remember it.</p>
 
     <div *ngFor="let item of banddata.data let i = index;">
 
@@ -27,8 +27,8 @@
                     <h3>{{item.albumid}}</h3>
 
                     <div>Produced and engineered by:
-                        <span *ngIf="item.aotherproducername">{{item.aotherproducername}} and </span>
-                        Gary King
+                        <span *ngIf="item.aotherproducername">{{item.aotherproducername}}</span>
+
                     </div>
 
                     <div *ngIf="item.labelid">Label: {{item.labelid}}</div>
@@ -38,10 +38,10 @@
                     <br/>
 
                     <!-- audio -->
-                    <div *ngFor="let audio of item['audio']">
+                    <!--<div *ngFor="let audio of item['audio']">
 
                         <div *ngIf="audio.audiotitle">{{audio.audiotitle}}
-                            <!--<div *ngIf="audio.audiofile">{{audio.audiofile}}-->
+                            &lt;!&ndash;<div *ngIf="audio.audiofile">{{audio.audiofile}}&ndash;&gt;
 
                             <div *ngIf="audio.audiofile">
                                 <audio controls controlsList="nodownload">
@@ -50,7 +50,7 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div>-->
                 </div>
 
                 <div class="col-lg-5 col-md-5 col-sm-12">
