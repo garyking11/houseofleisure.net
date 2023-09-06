@@ -13,6 +13,7 @@ export class BandsComponent implements OnInit {
   }
 
   public banddata;
+  public data;
 
   ngOnInit() {
     this.getContent();

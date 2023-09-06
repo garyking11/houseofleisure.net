@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   constructor(private _getDataService: GetDataService) {
   }
 
-  public pagedata;
+  public pagedata: any;
 
   ngOnInit() {
     this.getContent();
@@ -20,10 +20,11 @@ export class HomeComponent implements OnInit {
   getContent() {
 
     this._getDataService.getContentData().subscribe(
-        res => {
-console.log(res);
-          this.pagedata = res.data[0];
+        data => {
+
+          this.pagedata = data.data[0];
           console.log(this.pagedata);
+
         },
         error => console.log(error)
     );

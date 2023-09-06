@@ -2,8 +2,8 @@ import { ROUTES } from './home.routes';
 import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { HomeComponent } from  "./home.component"
-import {GetDataService} from "./get-data.service";
+import { HomeComponent } from  './home.component';
+import {GetDataService} from './get-data.service';
 
 @NgModule({
   imports: [
@@ -17,7 +17,5 @@ import {GetDataService} from "./get-data.service";
 })
 export class HomeModule {
 
-  constructor( ){
-  console.log('home module');
-  }
+  constructor( ) {}
 }
