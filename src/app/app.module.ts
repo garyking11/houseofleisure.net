@@ -1,29 +1,49 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule} from "@angular/http";
-//import { ReactiveFormsModule, FormsModule}  from "@angular/forms/forms";
-import { RouterModule } from '@angular/router';
-import { NavModule } from '../nav/nav.module';
-import { ROUTES } from './app.routes';
-import { AppComponent } from './app.component';
-import { NavComponent } from '../nav/nav.component';
-//import { GetDataService } from "./get-data/get-data.service";
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppRoutingModule} from './app-routing.module';
+
+import {AppComponent} from './app.component';
+
+import {RouterModule, ROUTES} from '@angular/router';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
+import {NavComponent} from './nav/nav.component';
+import {NavModule} from './nav/nav.module';
+import {HomeComponent} from './home/home.component';
+import {BandsComponent} from './bands/bands.component';
+import {GetBandDataService} from './services/get-band-data.service';
+import {GetDataService} from './services/get-data.service';
+import {CommonModule} from '@angular/common';
+import {HeaderComponent} from './header/header.component';
+
+
+
 
 @NgModule({
+  providers: [
+    GetBandDataService,
+    GetDataService
+  ],
   declarations: [
-    AppComponent,  
-    NavComponent
+    AppComponent,
+    NavComponent,
+    BandsComponent,
+    HomeComponent,
+    HeaderComponent,
+
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     NavModule,
-    /*FormsModule,
-    ReactiveFormsModule,*/
-    HttpModule,
-    RouterModule.forRoot(ROUTES, {useHash: true}) // app.routes.ts
+    RouterModule,
+    HttpClientModule,
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
   ],
-  //providers: [GetDataService],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

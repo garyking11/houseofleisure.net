@@ -1,0 +1,94 @@
+<div id="bands" class="container">
+
+  <h1>Recordings</h1>
+
+
+    <p>Here is the list of bands that have recorded at House Of Leisure as I remember it.</p>
+
+    <div *ngFor="let item of banddata[0]; let i = index">
+
+      <div class="data-container-border">
+
+        <div *ngIf="item.aapproved == '1'" class="">
+
+          <div class="col-lg-4 col-md-4 col-sm-12">
+
+            <div class="img-album-thumb" *ngIf="item.alocalurlgraphicsmall; else noimageavailable">
+              <img src="../assets/images/album/images/albumcovers/{{item.alocalurlgraphicsmall}}"
+                   height="144" width="144"/>
+            </div>
+
+            <ng-template #noimageavailable>
+              <div class="img-album-thumb">
+                <img src="../assets/images/album/images/albumcovers/image-unavailable.jpeg"
+                     height="144" width="144"/>
+              </div>
+            </ng-template>
+
+
+          </div>
+
+          <div class="col-lg-8 col-md-8 col-sm-12">
+
+            <h2>{{item.abandname}}</h2>
+            <h3>{{item.albumid}}</h3>
+
+            <div>Produced and engineered by:
+              <span *ngIf="item.aotherproducername">{{item.aotherproducername}}</span>
+
+            </div>
+
+            <div *ngIf="item.labelid">Label: {{item.labelid}}</div>
+
+            <div *ngIf="item.asongtitles">Titles: {{item.asongtitles}}</div>
+
+            <br/>
+
+            <!-- audio -->
+            <!--<div *ngFor="let audio of item['audio']">
+
+                <div *ngIf="audio.audiotitle">{{audio.audiotitle}}
+                    &lt;!&ndash;<div *ngIf="audio.audiofile">{{audio.audiofile}}&ndash;&gt;
+
+                    <div *ngIf="audio.audiofile">
+                        <audio controls controlsList="nodownload">
+                            <source src="../assets/audio/{{audio.audiofile}}">
+                        </audio>
+                    </div>
+
+                </div>
+            </div>-->
+          </div>
+
+
+            <p [innerHTML]="item.areleasedescription" *ngIf="item.areleasedescription">
+              {{item.areleasedescription}}</p>
+
+            <p [innerHTML]="item.astory" *ngIf="item.astory">
+              {{item.astory}}</p>
+
+            <div [innerHTML]="item.areleasedate" *ngIf="item.areleasedate">{{item.areleasedate}}></div>
+
+
+            <div *ngIf="item.studioid">Tracking at: {{item.studioid}}
+              <span *ngIf="item.atrackingstudiolocation">, {{item.atrackingstudiolocation}}</span>
+            </div>
+            <div *ngIf="item.amixingstudioname">Mixed at: {{item.amixingstudioname}}
+              <span *ngIf="item.amixingstudiolocation">, {{item.amixingstudiolocation}}</span>
+            </div>
+            <div *ngIf="item.amasterstudioname">Mastered at: {{item.amasterstudioname}}
+              <span *ngIf="item.amasterstudiolocation">, {{item.amasterstudiolocation}}</span>
+            </div>
+
+          </div>
+
+          <div class="clear"></div>
+
+      <hr>
+
+        </div>
+      </div>
+
+
+
+
