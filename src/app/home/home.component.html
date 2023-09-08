@@ -4,12 +4,21 @@
 
         <!--      <div><img src="../assets/images/space/home-top-image.png" alt=""></div>-->
 
-        <p [innerHTML]="pagedata.pcontent1" *ngIf="pagedata.pcontent1">{{pagedata.pcontent1}}</p>
-        <p [innerHTML]="pagedata.pcontent2" *ngIf="pagedata.pcontent2">{{pagedata.pcontent2}}</p>
-        <p [innerHTML]="pagedata.pcontent3" *ngIf="pagedata.pcontent2">{{pagedata.pcontent3}}</p>
+   <!--    <p [innerHTML]="pagedata2" *ngIf="pagedata2">{{pagedata2}}</p>
+        <p [innerHTML]="pagedata2" *ngIf="pagedata2">{{pagedata2}}</p>
+        <p [innerHTML]="pagedata2" *ngIf="pagedata2">{{pagedata2}}</p>-->
         <h3><a routerLink="/bands" target="_self">View all the bands that have recorded at HOL!</a></h3>
 
+    <p [innerHTML]="pagedata1">{{pagedata1}}</p>
+    <p [innerHTML]="pagedata2">{{pagedata2}}</p>
+    <p [innerHTML]="pagedata3">{{pagedata3}}</p>
+    <p [innerHTML]="pagedata4">{{pagedata4}}</p>
 
+
+<!--<div *ngFor="let item of pagedata2; let i = index;">
+&lt;!&ndash;  {{item.pcontent1}}&ndash;&gt;
+  {{item}}  test
+  </div>-->
 
   </div>
 

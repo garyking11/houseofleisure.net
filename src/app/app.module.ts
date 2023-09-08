@@ -13,7 +13,7 @@ import {HomeComponent} from './home/home.component';
 import {BandsComponent} from './bands/bands.component';
 import {GetBandDataService} from './services/get-band-data.service';
 import {GetDataService} from './services/get-data.service';
-import {CommonModule} from '@angular/common';
+import {CommonModule, HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {HeaderComponent} from './header/header.component';
 
 
@@ -22,7 +22,8 @@ import {HeaderComponent} from './header/header.component';
 @NgModule({
   providers: [
     GetBandDataService,
-    GetDataService
+    GetDataService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   declarations: [
     AppComponent,
@@ -38,7 +39,6 @@ import {HeaderComponent} from './header/header.component';
     NavModule,
     RouterModule,
     HttpClientModule,
-    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,

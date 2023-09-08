@@ -10,8 +10,6 @@ export class GetDataService {
 
   getContentData(): Observable<any> {
   const page = this._http.get('./assets/data/pages.json');
-  console.log('page-data')
-  console.log(page)
   return page;
   }
 }
