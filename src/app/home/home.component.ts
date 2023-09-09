@@ -28,19 +28,19 @@ export class HomeComponent implements OnInit {
       data => {
 
         this.pagedata = data;
-        console.log(this.pagedata);
+
         this.pagedata1 = Object.keys(this.pagedata).map(it => this.pagedata);
         this.pagedata2 = Object.keys(this.pagedata).map(it => this.pagedata);
         this.pagedata3 = Object.keys(this.pagedata).map(it => this.pagedata);
         this.pagedata4 = Object.keys(this.pagedata).map(it => this.pagedata);
 
-        this.pagedata1 = this.pagedata1[0].data['pcontent1'];
+        this.pagedata1 = this.pagedata1[0].data[0]['pcontent1'];
         this.pagedata2 = this.pagedata2[0].data[0]['pcontent2'];
         this.pagedata3 = this.pagedata3[0].data[0]['pcontent3'];
         this.pagedata4 = this.pagedata4[0].data[0]['pcontent4'];
 
       },
-      error => console.log(error)
+      // error => console.log(error)
     );
 
 
