@@ -39,7 +39,9 @@
           </div>-->
 
           <div *ngIf="!item.aotherproducername || !item.aotherengineername; else coproduced">
-            <span *ngIf="item.aproducedbygary == 1 && !item.aotherproducername">Produced: Gary King<br></span>
+
+
+
             <span *ngIf="item.aproducedbygary == 0 && item.aotherproducername">Produced by: {{item.aotherproducername}}
               <br></span>
             <span
@@ -50,7 +52,7 @@
 
           <ng-template #coproduced>
             <div>
-
+              <span *ngIf="item.aproducedbygary == 1 && !item.aotherproducername">Produced: Gary King<br></span>
               <span
                 *ngIf="item.aotherproducername && item.aproducedbygary == 1">Produced by: {{item.aotherproducername}}
                 and Gary King <br></span>
